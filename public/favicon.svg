@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- tomato body -->
+  <circle cx="32" cy="39" r="22" fill="#f472b6"/>
+  <!-- depth blush at bottom -->
+  <ellipse cx="32" cy="57" rx="13" ry="4.5" fill="#db2777" opacity="0.22"/>
+  <!-- specular highlight -->
+  <ellipse cx="23" cy="30" rx="5.5" ry="3.5" fill="white" opacity="0.38" transform="rotate(-18 23 30)"/>
+  <!-- stem -->
+  <rect x="30" y="11" width="4" height="11" rx="2" fill="#15803d"/>
+  <!-- left leaf -->
+  <path d="M31 20 Q20 6 13 16 Q21 15 31 20Z" fill="#4ade80"/>
+  <!-- right leaf -->
+  <path d="M33 20 Q44 6 51 16 Q43 15 33 20Z" fill="#4ade80"/>
+  <!-- centre-left petal -->
+  <path d="M32 17 Q29 8 24 10 Q27 13 32 17Z" fill="#22c55e"/>
+  <!-- centre-right petal -->
+  <path d="M32 17 Q35 8 40 10 Q37 13 32 17Z" fill="#22c55e"/>
+</svg>

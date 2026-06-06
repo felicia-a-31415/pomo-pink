@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Press Start 2P', monospace;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background: linear-gradient(135deg, #ffe8f6 0%, #fff0fc 28%, #f5eeff 58%, #e5f5ff 100%);
+  background-attachment: fixed;
+  color: #3b1a35;
+  -webkit-font-smoothing: antialiased;
+}
+
+input[type="range"] {
+  appearance: none;
+  height: 4px;
+  border-radius: 2px;
+  background: #fce7f3;
+  outline: none;
+  cursor: pointer;
+}
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ec4899;
+  cursor: pointer;
+  box-shadow: 0 0 6px rgba(236,72,153,0.4);
+}
+input[type="range"]::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ec4899;
+  cursor: pointer;
+  border: none;
+}
+
+textarea:focus, input:focus {
+  outline: none;
+}
+
+::selection {
+  background: #fbcfe8;
+  color: #831843;
+}
+
+.card {
+  background: rgba(255,255,255,0.72);
+  backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(255,182,217,0.5);
+  box-shadow:
+    0 4px 24px rgba(236,72,153,0.08),
+    0 1px 4px rgba(236,72,153,0.06),
+    inset 0 1px 0 rgba(255,255,255,0.9);
+}
+
+.card-blue {
+  background: rgba(255,255,255,0.72);
+  backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(147,197,253,0.5);
+  box-shadow:
+    0 4px 24px rgba(56,189,248,0.08),
+    0 1px 4px rgba(56,189,248,0.06),
+    inset 0 1px 0 rgba(255,255,255,0.9);
+}
+
+.ring-glow-pink {
+  filter: drop-shadow(0 0 8px rgba(236,72,153,0.45)) drop-shadow(0 0 16px rgba(249,168,212,0.25));
+}
+
+.ring-glow-blue {
+  filter: drop-shadow(0 0 8px rgba(56,189,248,0.45)) drop-shadow(0 0 16px rgba(186,230,253,0.25));
+}
