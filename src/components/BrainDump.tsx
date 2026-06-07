@@ -9,10 +9,12 @@ interface Props {
   onClose?: () => void
 }
 
+const LS_KEY = 'pomo_braindump'
+
 type SaveState = 'idle' | 'saving' | 'saved'
 
 export default function BrainDump({ user, onClose }: Props) {
-  const [content, setContent] = useState('')
+  const [content, setContent] = useState(() => localStorage.getItem(LS_KEY) ?? '')
   const [saveState, setSaveState] = useState<SaveState>('idle')
   const [collapsed, setCollapsed] = useState(false)
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null)
@@ -25,7 +27,10 @@ export default function BrainDump({ user, onClose }: Props) {
       .eq('user_id', user.id)
       .maybeSingle()
       .then(({ data }) => {
-        if (data?.content) setContent(data.content)
+        if (data?.content) {
+          setContent(data.content)
+          localStorage.setItem(LS_KEY, data.content)
+        }
       })
   }, [user])
 
@@ -42,6 +47,7 @@ export default function BrainDump({ user, onClose }: Props) {
 
   const handleChange = (val: string) => {
     setContent(val)
+    localStorage.setItem(LS_KEY, val)
     setSaveState('idle')
     if (debounceRef.current) clearTimeout(debounceRef.current)
     debounceRef.current = setTimeout(() => persist(val), 900)
